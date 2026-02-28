@@ -1,0 +1,217 @@
+[Sat Feb 28 13:55:18 2026] PHP 8.1.31 Development Server (http://localhost:8000) started
+[Sat Feb 28 13:56:34 2026] [::1]:59320 Accepted
+[Sat Feb 28 13:57:34 2026] [::1]:59320 [200]: GET /
+[Sat Feb 28 13:57:34 2026] [::1]:59320 Closing
+[Sat Feb 28 13:57:34 2026] [::1]:59325 Accepted
+[Sat Feb 28 13:57:34 2026] [::1]:59326 Accepted
+[Sat Feb 28 13:58:34 2026] [::1]:59325 [200]: GET /inventory.php - Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /Users/air/Downloads/Scripts/mobile-homes/inventory.php:46
+Stack trace:
+#0 {main}
+  thrown in /Users/air/Downloads/Scripts/mobile-homes/inventory.php on line 46
+[Sat Feb 28 13:58:34 2026] [::1]:59325 Closing
+[Sat Feb 28 13:58:34 2026] [::1]:59326 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 13:58:34 2026] [::1]:59326 Closing
+[Sat Feb 28 13:58:34 2026] [::1]:59360 Accepted
+[Sat Feb 28 13:58:34 2026] [::1]:59360 [200]: GET /css/style.css
+[Sat Feb 28 13:58:34 2026] [::1]:59360 Closing
+[Sat Feb 28 14:00:34 2026] [::1]:59392 Accepted
+[Sat Feb 28 14:00:34 2026] [::1]:59392 [200]: GET /
+[Sat Feb 28 14:00:34 2026] [::1]:59392 Closing
+[Sat Feb 28 14:00:57 2026] [::1]:59404 Accepted
+[Sat Feb 28 14:00:57 2026] [::1]:59404 [200]: GET /inventory.php
+[Sat Feb 28 14:00:57 2026] [::1]:59404 Closing
+[Sat Feb 28 14:00:57 2026] [::1]:59405 Accepted
+[Sat Feb 28 14:00:57 2026] [::1]:59406 Accepted
+[Sat Feb 28 14:00:57 2026] [::1]:59405 [200]: GET /css/style.css
+[Sat Feb 28 14:00:57 2026] [::1]:59405 Closing
+[Sat Feb 28 14:01:24 2026] [::1]:59406 [200]: GET /property.php?id=3
+[Sat Feb 28 14:01:24 2026] [::1]:59406 Closing
+[Sat Feb 28 14:01:24 2026] [::1]:59417 Accepted
+[Sat Feb 28 14:01:24 2026] [::1]:59418 Accepted
+[Sat Feb 28 14:01:24 2026] [::1]:59417 [200]: GET /css/style.css
+[Sat Feb 28 14:01:24 2026] [::1]:59417 Closing
+[Sat Feb 28 14:03:18 2026] [::1]:59418 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:03:18 2026] [::1]:59418 Closing
+[Sat Feb 28 14:03:48 2026] [::1]:59490 Accepted
+[Sat Feb 28 14:03:48 2026] [::1]:59490 [200]: GET /admin/inventory.php
+[Sat Feb 28 14:03:48 2026] [::1]:59490 Closing
+[Sat Feb 28 14:03:48 2026] [::1]:59491 Accepted
+[Sat Feb 28 14:03:48 2026] [::1]:59492 Accepted
+[Sat Feb 28 14:04:16 2026] [::1]:59491 [200]: GET /admin/leads.php
+[Sat Feb 28 14:04:16 2026] [::1]:59491 Closing
+[Sat Feb 28 14:04:16 2026] [::1]:59501 Accepted
+[Sat Feb 28 14:06:04 2026] [::1]:59501 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:06:04 2026] [::1]:59501 Closing
+[Sat Feb 28 14:06:04 2026] [::1]:59492 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:06:04 2026] [::1]:59492 Closing
+[Sat Feb 28 14:18:48 2026] [::1]:59746 Accepted
+[Sat Feb 28 14:18:48 2026] [::1]:59746 [200]: GET /admin/leads.php
+[Sat Feb 28 14:18:48 2026] [::1]:59746 Closing
+[Sat Feb 28 14:18:48 2026] [::1]:59747 Accepted
+[Sat Feb 28 14:18:48 2026] [::1]:59748 Accepted
+[Sat Feb 28 14:18:51 2026] [::1]:59747 [200]: GET /admin/inventory.php
+[Sat Feb 28 14:18:51 2026] [::1]:59747 Closing
+[Sat Feb 28 14:18:53 2026] [::1]:59748 [200]: GET /admin/index.php
+[Sat Feb 28 14:18:53 2026] [::1]:59748 Closing
+[Sat Feb 28 14:18:53 2026] [::1]:59749 Accepted
+[Sat Feb 28 14:18:53 2026] [::1]:59750 Accepted
+[Sat Feb 28 14:18:54 2026] [::1]:59749 [200]: GET /
+[Sat Feb 28 14:18:54 2026] [::1]:59749 Closing
+[Sat Feb 28 14:18:54 2026] [::1]:59751 Accepted
+[Sat Feb 28 14:18:54 2026] [::1]:59750 [200]: GET /css/style.css
+[Sat Feb 28 14:18:54 2026] [::1]:59750 Closing
+[Sat Feb 28 14:18:58 2026] [::1]:59751 [200]: GET /admin/inventory.php
+[Sat Feb 28 14:18:58 2026] [::1]:59751 Closing
+[Sat Feb 28 14:18:58 2026] [::1]:59753 Accepted
+[Sat Feb 28 14:18:58 2026] [::1]:59754 Accepted
+[Sat Feb 28 14:19:00 2026] [::1]:59753 [200]: GET /admin/inventory_edit.php?id=6
+[Sat Feb 28 14:19:00 2026] [::1]:59753 Closing
+[Sat Feb 28 14:19:00 2026] [::1]:59756 Accepted
+[Sat Feb 28 14:20:05 2026] [::1]:59756 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:20:05 2026] [::1]:59756 Closing
+[Sat Feb 28 14:20:05 2026] [::1]:59754 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:20:05 2026] [::1]:59754 Closing
+[Sat Feb 28 14:20:05 2026] [::1]:59783 Accepted
+[Sat Feb 28 14:20:06 2026] [::1]:59783 [200]: GET /property.php?id=3
+[Sat Feb 28 14:20:06 2026] [::1]:59783 Closing
+[Sat Feb 28 14:20:06 2026] [::1]:59784 Accepted
+[Sat Feb 28 14:20:06 2026] [::1]:59784 [200]: GET /css/style.css
+[Sat Feb 28 14:20:06 2026] [::1]:59784 Closing
+[Sat Feb 28 14:20:18 2026] [::1]:59793 Accepted
+[Sat Feb 28 14:20:18 2026] [::1]:59793 [200]: POST /property.php?id=3
+[Sat Feb 28 14:20:18 2026] [::1]:59793 Closing
+[Sat Feb 28 14:20:18 2026] [::1]:59794 Accepted
+[Sat Feb 28 14:20:18 2026] [::1]:59794 [200]: GET /css/style.css
+[Sat Feb 28 14:20:18 2026] [::1]:59794 Closing
+[Sat Feb 28 14:20:24 2026] [::1]:59796 Accepted
+[Sat Feb 28 14:20:24 2026] [::1]:59796 [200]: GET /admin/inventory_edit.php?id=6
+[Sat Feb 28 14:20:24 2026] [::1]:59796 Closing
+[Sat Feb 28 14:20:24 2026] [::1]:59797 Accepted
+[Sat Feb 28 14:20:25 2026] [::1]:59797 [200]: GET /admin/leads.php
+[Sat Feb 28 14:20:25 2026] [::1]:59797 Closing
+[Sat Feb 28 14:20:25 2026] [::1]:59798 Accepted
+[Sat Feb 28 14:20:25 2026] [::1]:59799 Accepted
+[Sat Feb 28 14:21:04 2026] [::1]:59798 [200]: GET /admin/inventory.php
+[Sat Feb 28 14:21:04 2026] [::1]:59798 Closing
+[Sat Feb 28 14:21:04 2026] [::1]:59808 Accepted
+[Sat Feb 28 14:21:05 2026] [::1]:59799 [200]: GET /admin/index.php
+[Sat Feb 28 14:21:05 2026] [::1]:59799 Closing
+[Sat Feb 28 14:21:05 2026] [::1]:59811 Accepted
+[Sat Feb 28 14:21:06 2026] [::1]:59808 [200]: GET /admin/inventory.php
+[Sat Feb 28 14:21:06 2026] [::1]:59808 Closing
+[Sat Feb 28 14:21:06 2026] [::1]:59813 Accepted
+[Sat Feb 28 14:21:15 2026] [::1]:59811 [200]: GET /index.php
+[Sat Feb 28 14:21:15 2026] [::1]:59811 Closing
+[Sat Feb 28 14:21:15 2026] [::1]:59813 [200]: GET /css/style.css
+[Sat Feb 28 14:21:15 2026] [::1]:59813 Closing
+[Sat Feb 28 14:21:19 2026] [::1]:59818 Accepted
+[Sat Feb 28 14:21:19 2026] [::1]:59818 [200]: GET /property.php?id=1
+[Sat Feb 28 14:21:19 2026] [::1]:59818 Closing
+[Sat Feb 28 14:21:19 2026] [::1]:59819 Accepted
+[Sat Feb 28 14:21:19 2026] [::1]:59820 Accepted
+[Sat Feb 28 14:21:19 2026] [::1]:59819 [200]: GET /css/style.css
+[Sat Feb 28 14:21:19 2026] [::1]:59819 Closing
+[Sat Feb 28 14:21:22 2026] [::1]:59820 [200]: GET /index.php
+[Sat Feb 28 14:21:22 2026] [::1]:59820 Closing
+[Sat Feb 28 14:21:22 2026] [::1]:59821 Accepted
+[Sat Feb 28 14:21:22 2026] [::1]:59822 Accepted
+[Sat Feb 28 14:21:22 2026] [::1]:59821 [200]: GET /css/style.css
+[Sat Feb 28 14:21:22 2026] [::1]:59821 Closing
+[Sat Feb 28 14:21:24 2026] [::1]:59822 [200]: GET /inventory.php
+[Sat Feb 28 14:21:24 2026] [::1]:59822 Closing
+[Sat Feb 28 14:21:24 2026] [::1]:59824 Accepted
+[Sat Feb 28 14:21:24 2026] [::1]:59825 Accepted
+[Sat Feb 28 14:21:24 2026] [::1]:59824 [200]: GET /css/style.css
+[Sat Feb 28 14:21:24 2026] [::1]:59824 Closing
+[Sat Feb 28 14:21:28 2026] [::1]:59825 [200]: GET /inventory.php?type=Single+Wide
+[Sat Feb 28 14:21:28 2026] [::1]:59825 Closing
+[Sat Feb 28 14:21:28 2026] [::1]:59826 Accepted
+[Sat Feb 28 14:21:28 2026] [::1]:59827 Accepted
+[Sat Feb 28 14:21:28 2026] [::1]:59826 [200]: GET /css/style.css
+[Sat Feb 28 14:21:28 2026] [::1]:59826 Closing
+[Sat Feb 28 14:21:30 2026] [::1]:59827 [200]: GET /inventory.php?type=Double+Wide
+[Sat Feb 28 14:21:30 2026] [::1]:59827 Closing
+[Sat Feb 28 14:21:30 2026] [::1]:59828 Accepted
+[Sat Feb 28 14:21:30 2026] [::1]:59829 Accepted
+[Sat Feb 28 14:21:30 2026] [::1]:59828 [200]: GET /css/style.css
+[Sat Feb 28 14:21:30 2026] [::1]:59828 Closing
+[Sat Feb 28 14:21:31 2026] [::1]:59829 [200]: GET /inventory.php?type=Tiny+Home
+[Sat Feb 28 14:21:31 2026] [::1]:59829 Closing
+[Sat Feb 28 14:21:31 2026] [::1]:59830 Accepted
+[Sat Feb 28 14:21:31 2026] [::1]:59830 [200]: GET /css/style.css
+[Sat Feb 28 14:21:31 2026] [::1]:59830 Closing
+[Sat Feb 28 14:21:32 2026] [::1]:59832 Accepted
+[Sat Feb 28 14:21:32 2026] [::1]:59832 [200]: GET /inventory.php?type=All
+[Sat Feb 28 14:21:32 2026] [::1]:59832 Closing
+[Sat Feb 28 14:21:32 2026] [::1]:59833 Accepted
+[Sat Feb 28 14:21:32 2026] [::1]:59834 Accepted
+[Sat Feb 28 14:21:32 2026] [::1]:59833 [200]: GET /css/style.css
+[Sat Feb 28 14:21:32 2026] [::1]:59833 Closing
+[Sat Feb 28 14:21:34 2026] [::1]:59834 [200]: GET /property.php?id=5
+[Sat Feb 28 14:21:34 2026] [::1]:59834 Closing
+[Sat Feb 28 14:21:34 2026] [::1]:59835 Accepted
+[Sat Feb 28 14:21:34 2026] [::1]:59836 Accepted
+[Sat Feb 28 14:21:34 2026] [::1]:59835 [200]: GET /css/style.css
+[Sat Feb 28 14:21:34 2026] [::1]:59835 Closing
+[Sat Feb 28 14:21:40 2026] [::1]:59836 [200]: GET /inventory.php
+[Sat Feb 28 14:21:40 2026] [::1]:59836 Closing
+[Sat Feb 28 14:21:40 2026] [::1]:59838 Accepted
+[Sat Feb 28 14:21:40 2026] [::1]:59839 Accepted
+[Sat Feb 28 14:21:40 2026] [::1]:59838 [200]: GET /css/style.css
+[Sat Feb 28 14:21:40 2026] [::1]:59838 Closing
+[Sat Feb 28 14:21:42 2026] [::1]:59839 [200]: GET /financing.php
+[Sat Feb 28 14:21:42 2026] [::1]:59839 Closing
+[Sat Feb 28 14:21:42 2026] [::1]:59840 Accepted
+[Sat Feb 28 14:21:42 2026] [::1]:59841 Accepted
+[Sat Feb 28 14:21:42 2026] [::1]:59840 [200]: GET /css/style.css
+[Sat Feb 28 14:21:42 2026] [::1]:59840 Closing
+[Sat Feb 28 14:21:45 2026] [::1]:59841 [200]: GET /sell.php
+[Sat Feb 28 14:21:45 2026] [::1]:59841 Closing
+[Sat Feb 28 14:21:45 2026] [::1]:59842 Accepted
+[Sat Feb 28 14:21:45 2026] [::1]:59843 Accepted
+[Sat Feb 28 14:21:45 2026] [::1]:59842 [200]: GET /css/style.css
+[Sat Feb 28 14:21:45 2026] [::1]:59842 Closing
+[Sat Feb 28 14:22:15 2026] [::1]:59843 [200]: GET /admin/leads.php
+[Sat Feb 28 14:22:15 2026] [::1]:59843 Closing
+[Sat Feb 28 14:22:15 2026] [::1]:59854 Accepted
+[Sat Feb 28 14:22:15 2026] [::1]:59855 Accepted
+[Sat Feb 28 14:24:18 2026] [::1]:59854 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:24:18 2026] [::1]:59854 Closing
+[Sat Feb 28 14:24:18 2026] [::1]:59855 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:24:18 2026] [::1]:59855 Closing
+[Sat Feb 28 14:24:25 2026] [::1]:59898 Accepted
+[Sat Feb 28 14:24:25 2026] [::1]:59898 [200]: GET /sell.php
+[Sat Feb 28 14:24:25 2026] [::1]:59898 Closing
+[Sat Feb 28 14:24:25 2026] [::1]:59899 Accepted
+[Sat Feb 28 14:24:25 2026] [::1]:59900 Accepted
+[Sat Feb 28 14:24:25 2026] [::1]:59899 [200]: GET /css/style.css
+[Sat Feb 28 14:24:25 2026] [::1]:59899 Closing
+[Sat Feb 28 14:24:40 2026] [::1]:59900 [200]: GET /admin/inventory.php
+[Sat Feb 28 14:24:40 2026] [::1]:59900 Closing
+[Sat Feb 28 14:24:40 2026] [::1]:59905 Accepted
+[Sat Feb 28 14:24:40 2026] [::1]:59906 Accepted
+[Sat Feb 28 14:24:42 2026] [::1]:59905 [200]: GET /admin/inventory_edit.php
+[Sat Feb 28 14:24:42 2026] [::1]:59905 Closing
+[Sat Feb 28 14:24:42 2026] [::1]:59908 Accepted
+[Sat Feb 28 14:26:04 2026] [::1]:59908 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:26:04 2026] [::1]:59908 Closing
+[Sat Feb 28 14:26:04 2026] [::1]:59906 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:26:04 2026] [::1]:59906 Closing
+[Sat Feb 28 14:28:09 2026] [::1]:59981 Accepted
+[Sat Feb 28 14:28:09 2026] [::1]:59981 [200]: GET /admin/inventory.php
+[Sat Feb 28 14:28:09 2026] [::1]:59981 Closing
+[Sat Feb 28 14:28:09 2026] [::1]:59982 Accepted
+[Sat Feb 28 14:30:25 2026] [::1]:59982 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:30:25 2026] [::1]:59982 Closing
+[Sat Feb 28 14:31:45 2026] [::1]:60069 Accepted
+[Sat Feb 28 14:31:45 2026] [::1]:60069 [200]: GET /admin/index.php
+[Sat Feb 28 14:31:45 2026] [::1]:60069 Closing
+[Sat Feb 28 14:31:45 2026] [::1]:60070 Accepted
+[Sat Feb 28 14:31:45 2026] [::1]:60071 Accepted
+[Sat Feb 28 14:31:50 2026] [::1]:60070 [200]: GET /admin/index.php
+[Sat Feb 28 14:31:50 2026] [::1]:60070 Closing
+[Sat Feb 28 14:31:50 2026] [::1]:60072 Accepted
+[Sat Feb 28 14:33:25 2026] [::1]:60072 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:33:25 2026] [::1]:60072 Closing
+[Sat Feb 28 14:33:25 2026] [::1]:60071 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sat Feb 28 14:33:25 2026] [::1]:60071 Closing
