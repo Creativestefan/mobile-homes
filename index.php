@@ -1,7 +1,7 @@
 <?php
 $page_title = 'Home';
-include 'includes/header.php';
 require_once 'includes/db.php';
+include 'includes/header.php';
 
 // Fetch inventory (will use DB if available, fallback otherwise)
 $inventory = get_inventory(isset($pdo) ? $pdo : null);
@@ -73,15 +73,14 @@ if (is_array($inventory) && !empty($inventory)) {
                                 <?php echo number_format($home['sqft']); ?> sqft
                             </span>
                         </div>
-                        <a href="property.php?id=<?php echo $home['id']; ?>" class="btn btn-outline"
-                            style="width: 100%; display: block;">View
+                        <a href="property.php?id=<?php echo $home['id']; ?>" class="btn btn-outline btn-full">View
                             Details</a>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
 
-        <div style="text-align: center; margin-top: 3rem;">
+        <div class="text-center mt-3">
             <a href="inventory.php" class="btn btn-outline">View All Inventory</a>
         </div>
     </div>
@@ -149,10 +148,10 @@ if (is_array($inventory) && !empty($inventory)) {
 </section>
 
 <!-- Final CTA -->
-<section class="section hero" style="padding: 4rem 0;">
-    <div class="container hero-content" style="z-index: 1; position: relative;">
+<section class="section hero py-4">
+    <div class="container hero-content">
         <h2>Ready to Step Into Your New Home?</h2>
-        <p style="margin-bottom: 2rem; color: #E2E8F0;">Don't wait. Browse our current inventory or see what financing
+        <p class="mb-4">Don't wait. Browse our current inventory or see what financing
             programs you qualify for today.</p>
         <div class="hero-actions">
             <a href="inventory.php" class="btn btn-primary">Shop All Homes</a>

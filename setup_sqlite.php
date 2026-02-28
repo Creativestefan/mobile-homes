@@ -50,6 +50,23 @@ try {
         )
     ");
 
+    // Create settings table and insert defaults
+    $pdo->exec("CREATE TABLE IF NOT EXISTS settings (setting_key TEXT PRIMARY KEY, setting_value TEXT)");
+    $default_settings = [
+        'site_name' => 'NextGen Homes',
+        'contact_phone' => '(555) 123-4567',
+        'contact_email' => 'info@nextgenhomes.demo',
+        'contact_address' => '123 Home Blvd, Anytown, USA',
+        'contact_hours' => 'Mon - Sat: 9am - 6pm',
+        'about_text' => 'Your path to affordable, high-quality homeownership. We provide full-service delivery, setup, and flexible financing.',
+        'site_logo' => '',
+        'site_favicon' => ''
+    ];
+    foreach ($default_settings as $key => $value) {
+        $stmt = $pdo->prepare("INSERT OR IGNORE INTO settings (setting_key, setting_value) VALUES (?, ?)");
+        $stmt->execute([$key, $value]);
+    }
+
     // Insert demo config admin
     $stmt = $pdo->prepare("INSERT OR IGNORE INTO admin_users (username, password_hash) VALUES ('admin', ?)");
     $stmt->execute(['$2y$10$8/XGxkH5Jd.x1Z1E2sXXueT2/1U7T5O5WQKv.f6qU1A/iA1V5k1j2']);

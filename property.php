@@ -141,11 +141,11 @@ include 'includes/header.php';
                             <span class="property-type">
                                 <?php echo htmlspecialchars($property['type']); ?>
                             </span>
-                            <h1 style="margin-bottom: 0.5rem; margin-top: 0.5rem;">
+                            <h1 style="margin-bottom: 0.5rem; margin-top: 0.5rem;" class="text-center-mobile">
                                 <?php echo htmlspecialchars($property['title']); ?>
                             </h1>
                         </div>
-                        <div style="text-align: right;">
+                        <div style="text-align: right;" class="text-center-mobile">
                             <div style="font-size: 2.5rem; font-weight: 800; color: var(--secondary);">$
                                 <?php echo number_format($property['price']); ?>
                             </div>
@@ -225,8 +225,16 @@ include 'includes/header.php';
 
                     <a href="financing.php" class="btn btn-primary"
                         style="width: 100%; margin-bottom: 1rem; text-align: center;">Get Prequalified Now</a>
-                    <a href="tel:5551234567" class="btn btn-outline"
-                        style="width: 100%; margin-bottom: 2rem; text-align: center;">Call (555) 123-4567</a>
+
+                    <?php
+                    $whatsapp_phone = preg_replace('/[^0-9]/', '', $settings['contact_phone']);
+                    $whatsapp_message = urlencode("Hi, I'm interested in the " . $property['title']);
+                    ?>
+                    <a href="https://wa.me/<?php echo $whatsapp_phone; ?>?text=<?php echo $whatsapp_message; ?>"
+                        class="btn btn-outline" style="width: 100%; margin-bottom: 2rem; text-align: center;"
+                        target="_blank" rel="noopener noreferrer">
+                        WhatsApp Us
+                    </a>
 
                     <hr style="border: 0; border-top: 1px solid var(--border-color); margin-bottom: 1.5rem;">
 

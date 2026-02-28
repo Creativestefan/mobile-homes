@@ -92,4 +92,32 @@ function get_property($pdo, $id)
     }
     return null;
 }
+
+/**
+ * Helper function to get all website settings
+ */
+function get_settings($pdo)
+{
+    $settings = [
+        'site_name' => 'NextGen Homes',
+        'contact_phone' => '(555) 123-4567',
+        'contact_email' => 'info@nextgenhomes.demo',
+        'contact_address' => '123 Home Blvd, Anytown, USA',
+        'contact_hours' => 'Mon - Sat: 9am - 6pm',
+        'about_text' => 'Your path to affordable, high-quality homeownership. We provide full-service delivery, setup, and flexible financing.'
+    ];
+
+    if ($pdo) {
+        try {
+            $stmt = $pdo->query("SELECT setting_key, setting_value FROM settings");
+            while ($row = $stmt->fetch()) {
+                $settings[$row['setting_key']] = $row['setting_value'];
+            }
+        } catch (PDOException $e) {
+            // fallback to defaults
+        }
+    }
+
+    return $settings;
+}
 ?>

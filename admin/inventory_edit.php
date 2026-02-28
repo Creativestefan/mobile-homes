@@ -53,16 +53,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Combine pasted URLs and new uploaded URLs
-    $final_image_string = trim($_POST['image'] ?? '');
-    if (!empty($uploaded_images)) {
-        $uploaded_string = implode("\n", $uploaded_images);
-        if (empty($final_image_string)) {
-            $final_image_string = $uploaded_string;
-        } else {
-            $final_image_string .= "\n" . $uploaded_string;
+    // Handle existing images and deletions
+    $current_images = [];
+    if ($is_edit) {
+        // Fetch current ones first
+        $stmt = $pdo->prepare("SELECT image FROM inventory WHERE id = ?");
+        $stmt->execute([$id]);
+        $existing_img_str = $stmt->fetchColumn() ?: '';
+        $current_images = array_filter(array_map('trim', explode("\n", $existing_img_str)));
+
+        // Handle deletions
+        if (isset($_POST['remove_images']) && is_array($_POST['remove_images'])) {
+            foreach ($_POST['remove_images'] as $url_to_remove) {
+                // Find and remove from the array
+                $key = array_search($url_to_remove, $current_images);
+                if ($key !== false) {
+                    unset($current_images[$key]);
+
+                    // If it's a local file, physically delete it
+                    if (strpos($url_to_remove, '/uploads/') === 0) {
+                        $physical_path = '../' . ltrim($url_to_remove, '/');
+                        if (file_exists($physical_path)) {
+                            unlink($physical_path);
+                        }
+                    }
+                }
+            }
         }
     }
+
+    // Combine pasted URLs, remaining existing URLs, and new uploaded URLs
+    $pasted_urls = array_filter(array_map('trim', explode("\n", $_POST['image'] ?? '')));
+
+    // Merge without duplicates
+    $all_final_images = array();
+
+    // If it's an edit, we rely on the `$current_images` after deletion, plus new uploads.
+    // The textbox is actually now ONLY used for *adding new* URLs computationally, 
+    // or we can allow the user to still edit the raw text box for simplicity.
+    // To make it robust: 
+    // 1. Take current DB images (minus deletions)
+    // 2. Take whatever is newly pasted in the textarea (we'll assume the textarea shows ALL current URLs, and the user just deletes lines or adds lines)
+    // Actually, the simplest approach when dealing with a textarea + visual deletion is:
+    // The visual deletion removes it from the array. We should reconstruct the image string based ONLY on the visual grid + new uploads.
+
+    // Instead of relying on the textarea for the final state of *existing* images (which the user might mess up),
+    // let's rely on the DB array. The textarea will now ONLY be used for pasting NEW urls.
+
+    if ($is_edit) {
+        $final_images = array_merge($current_images, $pasted_urls, $uploaded_images);
+    } else {
+        $final_images = array_merge($pasted_urls, $uploaded_images);
+    }
+
+    // Clean up empty and duplicates
+    $final_images = array_unique(array_filter($final_images));
+    $final_image_string = implode("\n", $final_images);
 
     if ($db_mode) {
         try {
@@ -237,10 +283,43 @@ if ($is_edit && $db_mode) {
                     style="width: 100%; padding: 0.75rem; border: 1px solid #E2E8F0; border-radius: 6px;">
             </div>
 
+            <!-- Visual Image Manager -->
+            <?php if ($is_edit): ?>
+                <?php
+                $saved_images = array_filter(array_map('trim', explode("\n", $home['image'] ?? '')));
+                if (!empty($saved_images)):
+                    ?>
+                    <div
+                        style="grid-column: 1 / -1; background-color: #F8FAFC; padding: 1.5rem; border-radius: var(--radius); border: 1px solid #E2E8F0; margin-bottom: 1rem;">
+                        <label style="display:block; margin-bottom: 1rem; font-weight: 600; font-size: 1.125rem;">Current
+                            Images</label>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem;">
+                            <?php foreach ($saved_images as $index => $img): ?>
+                                <div
+                                    style="position: relative; border-radius: 6px; overflow: hidden; border: 1px solid #CBD5E1; background: white;">
+                                    <img src="<?php echo htmlspecialchars($img); ?>"
+                                        style="width: 100%; height: 120px; object-fit: cover; display: block;">
+                                    <div
+                                        style="padding: 0.5rem; border-top: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: center; background: #FEF2F2;">
+                                        <label
+                                            style="display: flex; align-items: center; gap: 0.5rem; color: #DC2626; font-size: 0.875rem; cursor: pointer; font-weight: 500;">
+                                            <input type="checkbox" name="remove_images[]"
+                                                value="<?php echo htmlspecialchars($img); ?>">
+                                            Delete Image
+                                        </label>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; endif; ?>
+
             <div>
-                <label style="display:block; margin-bottom: 0.5rem; font-weight: 500;">Image URLs (One per line)</label>
-                <textarea name="image" required rows="3" placeholder="https://..."
-                    style="width: 100%; padding: 0.75rem; border: 1px solid #E2E8F0; border-radius: 6px; font-family: inherit; resize: vertical;"><?php echo htmlspecialchars($home['image'] ?? ''); ?></textarea>
+                <label style="display:block; margin-bottom: 0.5rem; font-weight: 500;">Paste NEW Image URLs (One per
+                    line)</label>
+                <textarea name="image" rows="3"
+                    placeholder="https://... (Leave blank if you are uploading files or using existing images)"
+                    style="width: 100%; padding: 0.75rem; border: 1px solid #E2E8F0; border-radius: 6px; font-family: inherit; resize: vertical;"></textarea>
             </div>
 
             <div

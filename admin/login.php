@@ -145,17 +145,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required value="admin">
+                <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required value="password123">
+                <input type="password" id="password" name="password" required>
             </div>
             <button type="submit">Log In Securely</button>
         </form>
 
-        <p style="text-align:center; margin-top: 1.5rem; font-size:0.75rem; color:#64748B;">Auto-filled with demo
-            credentials.</p>
+
     </div>
 
 </body>

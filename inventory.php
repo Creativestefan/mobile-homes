@@ -1,7 +1,7 @@
 <?php
 $page_title = 'Inventory';
-include 'includes/header.php';
 require_once 'includes/db.php';
+include 'includes/header.php';
 
 // Fetch inventory
 $inventory = get_inventory(isset($pdo) ? $pdo : null);
@@ -18,19 +18,18 @@ if ($filter !== 'All') {
 }
 ?>
 
-<div style="background-color: var(--primary); padding: 4rem 0;">
-    <div class="container text-center" style="color: white; max-width: 700px; margin: 0 auto; text-align: center;">
-        <h1 style="color: white;">Current Inventory</h1>
-        <p style="font-size: 1.125rem; color: #E2E8F0;">Browse our wide selection of ready-to-move homes. Use the
-            filters below to find the perfect size for your family.</p>
+<div class="page-header">
+    <div class="container">
+        <h1 class="mb-2">Current Inventory</h1>
+        <p class="text-muted" style="color: rgba(255,255,255,0.8);">Browse our wide selection of ready-to-move homes.
+        </p>
     </div>
 </div>
 
 <div class="section section-bg-gray">
     <div class="container">
         <!-- Filter Bar -->
-        <div class="filter-bar"
-            style="margin-bottom: 3rem; text-align: center; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+        <div class="filter-bar">
             <?php
             $filters = ['All', 'Single Wide', 'Double Wide', 'Tiny Home', 'Triple Wide'];
             foreach ($filters as $f):
@@ -79,14 +78,13 @@ if ($filter !== 'All') {
                                     <?php echo number_format($home['sqft']); ?> sqft
                                 </span>
                             </div>
-                            <a href="property.php?id=<?php echo $home['id']; ?>" class="btn btn-outline"
-                                style="width: 100%; display: block;">View
+                            <a href="property.php?id=<?php echo $home['id']; ?>" class="btn btn-outline btn-full">View
                                 Details</a>
                         </div>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;">
+                <div class="text-center py-4 grid-full">
                     <h3>No homes found in this category.</h3>
                     <p>Please try a different filter or check back later.</p>
                 </div>

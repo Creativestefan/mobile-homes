@@ -618,3 +618,165 @@ img {
     font-weight: 700;
     color: var(--primary);
 }
+
+/* --- Phase 8: Targeted Responsive Additions --- */
+
+/* Page Headers Mobile */
+@media (max-width: 767px) {
+    .page-header {
+        padding: 2.5rem 0;
+    }
+
+    .page-header h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Filter Bar Responsive */
+.filter-bar {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .filter-bar {
+        gap: 0.5rem;
+    }
+
+    .filter-bar .btn {
+        flex: 1 1 40%;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Property Detail Tweaks */
+@media (max-width: 991px) {
+    .property-detail-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .property-gallery .carousel-container {
+        height: 300px !important;
+    }
+
+    .property-info {
+        padding: 1.5rem !important;
+    }
+
+    .property-info>div:first-child {
+        text-align: left !important;
+        width: 100%;
+    }
+
+    .property-info h1 {
+        font-size: 1.75rem;
+    }
+
+    .property-info div[style*="text-align: right"] {
+        text-align: left !important;
+        margin-top: 1rem;
+    }
+}
+
+/* Sell/Financing Grid Tweaks */
+@media (max-width: 1023px) {
+
+    .sell-grid,
+    .financing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    .hero {
+        padding: 4rem 0 !important;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem !important;
+    }
+}
+
+/* Utility: Spacing & Alignment */
+@media (max-width: 767px) {
+    .section {
+        padding: 3rem 0;
+    }
+
+    .text-center-mobile {
+        text-align: center !important;
+    }
+
+    .mb-mobile-4 {
+        margin-bottom: 2rem !important;
+    }
+}
+/* Global Header Scaling for Mobile (Min 364px supported) */
+@media (max-width: 767px) {
+    h1, .h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.2 !important;
+    }
+
+    h2, .h2 {
+        font-size: 1.65rem !important;
+        line-height: 1.3 !important;
+    }
+
+    h3, .h3 {
+        font-size: 1.25rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .hero h1 {
+        font-size: 2rem !important;
+    }
+}
+
+/* WhatsApp Floating Widget */
+.whatsapp-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-widget:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 32px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .whatsapp-widget {
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}

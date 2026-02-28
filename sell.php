@@ -44,7 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- Left Copy -->
             <div>
                 <span class="hero-kicker" style="color: var(--accent);">Cash Buyout Program</span>
-                <h1 style="font-size: 3rem; margin-bottom: 1.5rem; color: white;">Need to sell your mobile home?<br>We
+                <h1 style="margin-bottom: 1.5rem; color: white;" class="text-center-mobile">Need to sell your mobile
+                    home?<br>We
                     buy them for cash.</h1>
                 <p style="font-size: 1.25rem; margin-bottom: 2.5rem; color: #E2E8F0;">Skip the real estate agents, the
                     repairs, and the waiting. We buy manufactured homes in any condition, handle the tear-down and

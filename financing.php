@@ -31,13 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="section">
     <div class="container">
-        <div class="financing-grid" style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: start;">
+        <div class="financing-grid">
 
             <!-- Left Column: Copy -->
             <div>
                 <span class="hero-kicker" style="color: var(--secondary);">Finance Your Dream</span>
-                <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Homeownership is within your reach.</h1>
-                <p style="font-size: 1.125rem; margin-bottom: 2rem; color: var(--text-muted);">We believe everyone
+                <h1 style="margin-bottom: 1.5rem;" class="text-center-mobile">Homeownership is within
+                    your reach.</h1>
+                <p style="font-size: 1.125rem; margin-bottom: 2rem; color: var(--text-muted);"
+                    class="text-center-mobile">We believe everyone
                     deserves a place to call home. With over 20 years of experience, our finance team has built
                     relationships with top national lenders and local credit unions to get you approved.</p>
 
@@ -72,9 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <!-- Right Column: Form -->
-            <div
-                style="background-color: var(--bg-gray); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
-                <h2 style="margin-bottom: 1.5rem;">Prequalify Today</h2>
+            <div class="card p-4">
+                <h2 style="margin-bottom: 1.5rem;" class="text-center-mobile">Prequalify Today</h2>
 
                 <?php if ($message): ?>
                     <div
@@ -83,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 <?php else: ?>
                     <form method="POST" action="financing.php">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="grid-2" style="gap: 1rem;">
                             <div class="form-group">
                                 <label class="form-label" for="first_name">First Name</label>
                                 <input type="text" id="first_name" name="first_name" class="form-control" required>
@@ -116,8 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary"
-                            style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+                        <button type="submit" class="btn btn-primary btn-full mt-2">
                             <span>🔒</span> Submit Application Securely
                         </button>
 
@@ -130,13 +130,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
-
-<style>
-    @media (min-width: 1024px) {
-        .financing-grid {
-            grid-template-columns: 1fr 1fr !important;
-        }
-    }
-</style>
 
 <?php include 'includes/footer.php'; ?>

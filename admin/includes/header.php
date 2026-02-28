@@ -5,6 +5,11 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     exit();
 }
 
+// Ensure settings are available
+if (!isset($settings)) {
+    $settings = get_settings($pdo);
+}
+
 // Get the current page name to highlight the nav
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
@@ -14,8 +19,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextGen Homes | Admin Panel</title>
+    <title><?php echo htmlspecialchars($settings['site_name']); ?> | Admin Panel</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <?php if (!empty($settings['site_favicon'])): ?>
+        <link rel="icon" href="../<?php echo ltrim(htmlspecialchars($settings['site_favicon']), '/'); ?>"
+            type="image/<?php echo pathinfo($settings['site_favicon'], PATHINFO_EXTENSION); ?>">
+    <?php endif; ?>
+
     <style>
         :root {
             --primary: #0F172A;
@@ -232,8 +243,20 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <body>
 
     <aside class="sidebar">
-        <div class="sidebar-header">
-            NextGen<span>Homes</span>
+        <div class="sidebar-header"
+            style="padding: 1.5rem; display: flex; flex-direction: column; align-items: flex-start;">
+            <?php if (!empty($settings['site_logo'])): ?>
+                <img src="<?php echo htmlspecialchars($settings['site_logo']); ?>" alt="Logo"
+                    style="max-height: 40px; margin-bottom: 0.5rem;">
+            <?php else: ?>
+                <?php
+                $name_parts = explode(' ', $settings['site_name'], 2);
+                echo htmlspecialchars($name_parts[0]);
+                if (isset($name_parts[1])) {
+                    echo '<span>' . htmlspecialchars($name_parts[1]) . '</span>';
+                }
+                ?>
+            <?php endif; ?>
             <small>Dealership Admin Portal</small>
         </div>
 
@@ -243,6 +266,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 class="<?php echo $current_page == 'inventory.php' || $current_page == 'inventory_edit.php' ? 'active' : ''; ?>">Manage
                 Inventory</a>
             <a href="leads.php" class="<?php echo $current_page == 'leads.php' ? 'active' : ''; ?>">Requests & Leads</a>
+            <a href="settings.php" class="<?php echo $current_page == 'settings.php' ? 'active' : ''; ?>">Website
+                Settings</a>
+            <a href="settings.php#account-security" class="">Admin Account Details</a>
             <a href="/" target="_blank" style="margin-top: 2rem;">↗ View Live Site</a>
         </nav>
 

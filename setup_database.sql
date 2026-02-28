@@ -64,3 +64,24 @@ CREATE TABLE IF NOT EXISTS `admin_users` (
 -- NOTE: You should change this password immediately in a production environment
 INSERT INTO `admin_users` (`username`, `password_hash`) VALUES
 ('admin', '$2y$10$8/XGxkH5Jd.x1Z1E2sXXueT2/1U7T5O5WQKv.f6qU1A/iA1V5k1j2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+CREATE TABLE IF NOT EXISTS `settings` (
+  `setting_key` varchar(50) NOT NULL,
+  `setting_value` text DEFAULT NULL,
+  PRIMARY KEY (`setting_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
+('site_name', 'NextGen Homes'),
+('contact_phone', '(555) 123-4567'),
+('contact_email', 'info@nextgenhomes.demo'),
+('contact_address', '123 Home Blvd, Anytown, USA'),
+('contact_hours', 'Mon - Sat: 9am - 6pm'),
+('about_text', 'Your path to affordable, high-quality homeownership. We provide full-service delivery, setup, and flexible financing.'),
+('site_logo', ''),
+('site_favicon', '');
