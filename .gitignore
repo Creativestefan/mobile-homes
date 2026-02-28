@@ -1,0 +1,6 @@
+.env
+.htaccess
+data/*.sqlite
+uploads/*
+!uploads/.gitkeep
+*.log
