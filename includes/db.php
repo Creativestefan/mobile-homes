@@ -51,6 +51,11 @@ function is_local_request()
     $server_name = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? php_uname('n');
     $server_name = strtolower((string) $server_name);
 
+    // Strip port if present
+    if (strpos($server_name, ':') !== false) {
+        $server_name = explode(':', $server_name)[0];
+    }
+
     return $server_name === '' ||
         $server_name === 'localhost' ||
         $server_name === '127.0.0.1' ||
@@ -61,6 +66,9 @@ function is_local_request()
 
 $env_path = __DIR__ . '/../.env';
 $env_vars = load_env_file($env_path);
+
+$pdo = null;
+$db_connection_error = null;
 
 $configured_driver = strtolower((string) (getenv('DB_CONNECTION') ?: ($env_vars['DB_CONNECTION'] ?? '')));
 $has_mysql_credentials = !empty(getenv('DB_NAME') ?: ($env_vars['DB_NAME'] ?? '')) &&

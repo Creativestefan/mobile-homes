@@ -12,8 +12,9 @@ if (is_array($inventory) && !empty($inventory)) {
     $featured_homes = array_filter($inventory, function ($home) {
         return isset($home['status']) && $home['status'] === 'Featured';
     });
-    // Get top 3
-    $featured_homes = array_slice($featured_homes, 0, 3);
+
+    // Get top 6
+    $featured_homes = array_slice($featured_homes, 0, 6);
 }
 ?>
 
