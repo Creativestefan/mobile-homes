@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $dest_path = $upload_dir . $new_filename;
 
                     if (move_uploaded_file($tmp_name, $dest_path)) {
-                        $uploaded_images[] = '/uploads/' . $new_filename;
+                        $uploaded_images[] = 'uploads/' . $new_filename;
                     }
                 }
             }
@@ -297,7 +297,7 @@ if ($is_edit && $db_mode) {
                             <?php foreach ($saved_images as $index => $img): ?>
                                 <div
                                     style="position: relative; border-radius: 6px; overflow: hidden; border: 1px solid #CBD5E1; background: white;">
-                                    <img src="<?php echo htmlspecialchars($img); ?>"
+                                    <img src="<?php echo get_image_url($img, true); ?>"
                                         style="width: 100%; height: 120px; object-fit: cover; display: block;">
                                     <div
                                         style="padding: 0.5rem; border-top: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: center; background: #FEF2F2;">

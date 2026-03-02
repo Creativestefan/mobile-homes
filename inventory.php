@@ -46,7 +46,7 @@ if ($filter !== 'All') {
                 <?php foreach ($filtered_inventory as $home): ?>
                     <div class="property-card">
                         <div class="property-image">
-                            <img src="<?php echo htmlspecialchars($home['image']); ?>"
+                            <img src="<?php echo get_image_url($home['image']); ?>"
                                 alt="<?php echo htmlspecialchars($home['title']); ?>">
                             <?php if ($home['status'] === 'Featured'): ?>
                                 <span class="property-badge">

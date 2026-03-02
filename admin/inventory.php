@@ -73,7 +73,7 @@ if (isset($pdo)) {
                                 <?php echo $item['id']; ?>
                             </td>
                             <td>
-                                <img src="<?php echo htmlspecialchars($item['image']); ?>" alt="home"
+                                <img src="<?php echo get_image_url($item['image'], true); ?>" alt="home"
                                     style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px;">
                             </td>
                             <td>

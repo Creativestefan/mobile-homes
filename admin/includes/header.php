@@ -23,7 +23,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <?php if (!empty($settings['site_favicon'])): ?>
-        <link rel="icon" href="../<?php echo ltrim(htmlspecialchars($settings['site_favicon']), '/'); ?>"
+        <link rel="icon" href="<?php echo get_image_url($settings['site_favicon'], true); ?>"
             type="image/<?php echo pathinfo($settings['site_favicon'], PATHINFO_EXTENSION); ?>">
     <?php endif; ?>
 
@@ -246,7 +246,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <div class="sidebar-header"
             style="padding: 1.5rem; display: flex; flex-direction: column; align-items: flex-start;">
             <?php if (!empty($settings['site_logo'])): ?>
-                <img src="<?php echo htmlspecialchars($settings['site_logo']); ?>" alt="Logo"
+                <img src="<?php echo get_image_url($settings['site_logo'], true); ?>" alt="Logo"
                     style="max-height: 40px; margin-bottom: 0.5rem;">
             <?php else: ?>
                 <?php

@@ -18,7 +18,7 @@ $settings = get_settings($pdo);
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <?php if (!empty($settings['site_favicon'])): ?>
-        <link rel="icon" href="<?php echo htmlspecialchars($settings['site_favicon']); ?>"
+        <link rel="icon" href="<?php echo get_image_url($settings['site_favicon']); ?>"
             type="image/<?php echo pathinfo($settings['site_favicon'], PATHINFO_EXTENSION); ?>">
     <?php endif; ?>
 
@@ -47,7 +47,7 @@ $settings = get_settings($pdo);
                 <div class="logo">
                     <a href="index.php">
                         <?php if (!empty($settings['site_logo'])): ?>
-                            <img src="<?php echo htmlspecialchars($settings['site_logo']); ?>"
+                            <img src="<?php echo get_image_url($settings['site_logo']); ?>"
                                 alt="<?php echo htmlspecialchars($settings['site_name']); ?>" class="logo-img"
                                 style="max-height: 50px; width: auto; display: block;">
                         <?php else: ?>

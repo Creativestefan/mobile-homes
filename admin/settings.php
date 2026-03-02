@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         unlink($old_path);
                     }
                 }
-                $updated_settings['site_logo'] = '/uploads/' . $new_filename;
+                $updated_settings['site_logo'] = 'uploads/' . $new_filename;
             }
         }
     }
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         unlink($old_path);
                     }
                 }
-                $updated_settings['site_favicon'] = '/uploads/' . $new_filename;
+                $updated_settings['site_favicon'] = 'uploads/' . $new_filename;
             }
         }
     }
@@ -180,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div
                         style="flex-shrink: 0; background: white; padding: 1rem; border-radius: 6px; border: 1px solid #E2E8F0; min-width: 150px; text-align: center;">
                         <?php if (!empty($settings['site_logo'])): ?>
-                            <img src="<?php echo htmlspecialchars($settings['site_logo']); ?>" alt="Current Logo"
+                            <img src="<?php echo get_image_url($settings['site_logo'], true); ?>" alt="Current Logo"
                                 style="max-height: 80px; max-width: 100%; display: block; margin: 0 auto 0.5rem;">
                             <span style="font-size: 0.75rem; color: var(--text-muted);">Current Logo</span>
                         <?php else: ?>
@@ -207,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div
                         style="flex-shrink: 0; background: white; padding: 0.75rem; border-radius: 6px; border: 1px solid #E2E8F0; min-width: 80px; text-align: center;">
                         <?php if (!empty($settings['site_favicon'])): ?>
-                            <img src="<?php echo htmlspecialchars($settings['site_favicon']); ?>" alt="Current Favicon"
+                            <img src="<?php echo get_image_url($settings['site_favicon'], true); ?>" alt="Current Favicon"
                                 style="max-height: 32px; max-width: 32px; display: block; margin: 0 auto 0.25rem;">
                             <span style="font-size: 0.65rem; color: var(--text-muted); display: block;">Current Icon</span>
                         <?php else: ?>
@@ -226,21 +226,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
 
-            <div id="account-security" style="background-color: #FFFBEB; padding: 1.5rem; border-radius: 6px; border: 1px solid #FEF3C7; margin-top: 1rem;">
-                <label style="display:block; margin-bottom: 1rem; font-weight: 600; color: #92400E;">🔒 Admin Account Security</label>
+            <div id="account-security"
+                style="background-color: #FFFBEB; padding: 1.5rem; border-radius: 6px; border: 1px solid #FEF3C7; margin-top: 1rem;">
+                <label style="display:block; margin-bottom: 1rem; font-weight: 600; color: #92400E;">🔒 Admin Account
+                    Security</label>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
                     <div>
-                        <label style="display:block; margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 500;">Admin Username</label>
-                        <input type="text" name="admin_username" value="<?php echo htmlspecialchars($admin_user['username'] ?? 'admin'); ?>" 
+                        <label
+                            style="display:block; margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 500;">Admin
+                            Username</label>
+                        <input type="text" name="admin_username"
+                            value="<?php echo htmlspecialchars($admin_user['username'] ?? 'admin'); ?>"
                             style="width: 100%; padding: 0.6rem; border: 1px solid #FCD34D; border-radius: 6px; font-family: inherit;">
                     </div>
                     <div>
-                        <label style="display:block; margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 500;">New Password (leave blank to keep current)</label>
+                        <label style="display:block; margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 500;">New
+                            Password (leave blank to keep current)</label>
                         <input type="password" name="admin_password" placeholder="••••••••"
                             style="width: 100%; padding: 0.6rem; border: 1px solid #FCD34D; border-radius: 6px; font-family: inherit;">
                     </div>
                 </div>
-                <p style="font-size: 0.75rem; color: #92400E; margin-top: 0.75rem;">⚠️ Only change these if you want to update your login credentials. Security is important!</p>
+                <p style="font-size: 0.75rem; color: #92400E; margin-top: 0.75rem;">⚠️ Only change these if you want to
+                    update your login credentials. Security is important!</p>
             </div>
 
             <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #E2E8F0;">

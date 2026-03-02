@@ -43,7 +43,7 @@ if (is_array($inventory) && !empty($inventory)) {
             <?php foreach ($featured_homes as $home): ?>
                 <div class="property-card">
                     <div class="property-image">
-                        <img src="<?php echo htmlspecialchars($home['image']); ?>"
+                        <img src="<?php echo get_image_url($home['image']); ?>"
                             alt="<?php echo htmlspecialchars($home['title']); ?>">
                         <span class="property-badge">
                             <?php echo htmlspecialchars($home['status']); ?>

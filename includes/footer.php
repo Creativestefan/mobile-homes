@@ -6,7 +6,7 @@
             <div class="footer-col brand-col">
                 <h3 class="footer-logo">
                     <?php if (!empty($settings['site_logo'])): ?>
-                        <img src="<?php echo htmlspecialchars($settings['site_logo']); ?>"
+                        <img src="<?php echo get_image_url($settings['site_logo']); ?>"
                             alt="<?php echo htmlspecialchars($settings['site_name']); ?>" class="logo-img"
                             style="max-height: 40px; width: auto; display: block; margin-bottom: 1rem;">
                     <?php else: ?>

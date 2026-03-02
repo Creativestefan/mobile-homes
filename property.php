@@ -75,7 +75,7 @@ include 'includes/header.php';
                             style="position: relative; width: 100%; height: 500px; display: flex; align-items: center; justify-content: center; background: #000;">
                             <?php foreach ($images as $index => $img): ?>
                                 <img class="carousel-slide <?php echo $index === 0 ? 'active' : ''; ?>"
-                                    src="<?php echo htmlspecialchars($img); ?>" alt="Property Image <?php echo $index + 1; ?>"
+                                    src="<?php echo get_image_url($img); ?>" alt="Property Image <?php echo $index + 1; ?>"
                                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: <?php echo $index === 0 ? '1' : '0'; ?>; transition: opacity 0.4s ease-in-out;">
                             <?php endforeach; ?>
 
@@ -124,7 +124,7 @@ include 'includes/header.php';
                 <?php else: ?>
                     <div class="property-gallery"
                         style="margin-bottom: 2rem; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow);">
-                        <img src="<?php echo htmlspecialchars($images[0] ?? $property['image']); ?>"
+                        <img src="<?php echo get_image_url($images[0] ?? $property['image']); ?>"
                             alt="<?php echo htmlspecialchars($property['title']); ?>"
                             style="width: 100%; height: 500px; object-fit: cover;">
                     </div>
